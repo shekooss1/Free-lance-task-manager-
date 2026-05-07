@@ -22,8 +22,13 @@ public class User {
     private String password ;
     Role role ;
     Date joinedDate;
-@OneToMany(mappedBy = "user") private ArrayList<Task> tasks;
-    public User() {
+@OneToMany(mappedBy = "client")
+private ArrayList<Task> clientTasks;    // tasks where this user is the CLIENT
+
+@OneToMany(mappedBy = "freelancer")
+private ArrayList<Task> freelancerTasks; // tasks where this user is the FREELANCER
+    
+public User() {
     }
 
     public User(String email, long id, Date joinedDate, String name, String password, String phone, Role role) {
@@ -90,6 +95,22 @@ public class User {
 
     public void setJoinedDate(Date joinedDate) {
         this.joinedDate = joinedDate;
+    }
+
+    public ArrayList<Task> getClientTasks() {
+        return clientTasks;
+    }
+
+    public void setClientTasks(ArrayList<Task> clientTasks) {
+        this.clientTasks = clientTasks;
+    }
+
+    public ArrayList<Task> getFreelancerTasks() {
+        return freelancerTasks;
+    }
+
+    public void setFreelancerTasks(ArrayList<Task> freelancerTasks) {
+        this.freelancerTasks = freelancerTasks;
     }
 
 

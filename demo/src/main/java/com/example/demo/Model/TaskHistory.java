@@ -14,14 +14,14 @@ import jakarta.persistence.Table;
 public class TaskHistory {
  @Id
  @GeneratedValue(strategy = GenerationType.IDENTITY)   
- private long id ;
+ private Long id ;
     private String changeDescription ;
     Date timeStamp ; //when the change happend
 
     public TaskHistory() {
     }
 
-    public TaskHistory(String changeDescription, long id, Date timeStamp) {
+    public TaskHistory(String changeDescription, Long id, Date timeStamp) {
         this.changeDescription = changeDescription;
         this.id = id;
         this.timeStamp = timeStamp;

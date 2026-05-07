@@ -15,22 +15,29 @@ import jakarta.persistence.Table;
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id ;
+    private Long id ;
     private String title ;
     private String description ;
-    private TaskStatus status ;
+    private TaskStatus Status ;
     private Piriority piriority ;
     Date dueDate ;
-@ManyToOne @JoinColumn(name = "user_id") private User user;
-    public Task(String description, Date dueDate, long id, Piriority piriority, TaskStatus status, String title) {
+    
+@ManyToOne
+    @JoinColumn(name = "client_id")
+    private User client;      
+
+    @ManyToOne
+    @JoinColumn(name = "freelancer_id")
+    private User freelancer;  
+
+public Task(String description, Date dueDate, long id, Piriority piriority, TaskStatus status, String title) {
         this.description = description;
         this.dueDate = dueDate;
         this.id = id;
         this.piriority = piriority;
-        this.status = status;
+        this.Status = Status;
         this.title = title;
     }
-
     public Task() {
     }
 
@@ -60,11 +67,11 @@ public class Task {
     }
 
     public TaskStatus getStatus() {
-        return status;
+        return Status;
     }
 
     public void setStatus(TaskStatus status) {
-        this.status = status;
+        this.Status = status;
     }
 
     public Piriority getPiriority() {
@@ -81,6 +88,22 @@ public class Task {
 
     public void setDueDate(Date dueDate) {
         this.dueDate = dueDate;
+    }
+
+    public User getClient() {
+        return client;
+    }
+
+    public void setClient(User client) {
+        this.client = client;
+    }
+
+    public User getFreelancer() {
+        return freelancer;
+    }
+
+    public void setFreelancer(User freelancer) {
+        this.freelancer = freelancer;
     }
 
 
