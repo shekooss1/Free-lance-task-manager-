@@ -402,8 +402,8 @@
 
         <!-- Role toggle -->
         <div class="role-toggle">
-            <button class="role-btn active" onclick="setRole('client', this)">👤 I'm a Client</button>
-            <button class="role-btn" onclick="setRole('freelancer', this)">💼 I'm a Freelancer</button>
+            <button class="role-btn active" onclick="setRole('CLIENT', this)">👤 I'm a Client</button>
+            <button class="role-btn" onclick="setRole('FREELANCER', this)">💼 I'm a Freelancer</button>
         </div>
 
         <!-- Role note -->
@@ -487,14 +487,14 @@
 
 
 <script>
-    let currentRole = 'client';
+    let currentRole = 'CLIENT';
 
     function setRole(role, btn) {
         currentRole = role;
         document.querySelectorAll('.role-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const note = document.getElementById('role-note');
-        if (role === 'freelancer') {
+        if (role === 'FREELANCER') {
             note.classList.add('show');
         } else {
             note.classList.remove('show');

@@ -40,24 +40,22 @@
             color: var(--text);
         }
 
-        /* BACKGROUND */
-
         .bg {
             position: fixed;
             inset: 0;
             z-index: 0;
             background:
-                    radial-gradient(ellipse 80% 60% at 20% 10%, #141829 0%, transparent 65%),
-                    radial-gradient(ellipse 60% 80% at 80% 90%, #0d1a18 0%, transparent 60%),
-                    #0b0c10;
+                radial-gradient(ellipse 80% 60% at 20% 10%, #141829 0%, transparent 65%),
+                radial-gradient(ellipse 60% 80% at 80% 90%, #0d1a18 0%, transparent 60%),
+                #0b0c10;
         }
 
         .bg-grid {
             position: absolute;
             inset: 0;
             background-image:
-                    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
             background-size: 48px 48px;
         }
 
@@ -87,10 +85,8 @@
 
         @keyframes drift {
             from { transform: translate(0,0) scale(1); }
-            to { transform: translate(30px,25px) scale(1.06); }
+            to   { transform: translate(30px,25px) scale(1.06); }
         }
-
-        /* PAGE */
 
         .page {
             position: relative;
@@ -102,45 +98,22 @@
             padding: 2rem 1rem;
         }
 
-        /* CARD */
-
         .card {
             width: 100%;
             max-width: 430px;
-
-            background: linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.055),
-                    rgba(255,255,255,0.02)
-            );
-
+            background: linear-gradient(145deg, rgba(255,255,255,0.055), rgba(255,255,255,0.02));
             border: 1px solid var(--border-2);
-
             border-radius: 24px;
-
             padding: 2.6rem;
-
             backdrop-filter: blur(28px) saturate(1.4);
-
-            box-shadow:
-                    0 40px 80px rgba(0,0,0,0.55),
-                    0 0 60px rgba(232,200,122,0.04);
-
+            box-shadow: 0 40px 80px rgba(0,0,0,0.55), 0 0 60px rgba(232,200,122,0.04);
             animation: cardIn .7s ease forwards;
         }
 
         @keyframes cardIn {
-            from {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
-
-        /* LOGO */
 
         .logo-row {
             display: flex;
@@ -167,11 +140,7 @@
             letter-spacing: .04em;
         }
 
-        .logo-name span {
-            color: var(--gold);
-        }
-
-        /* TEXT */
+        .logo-name span { color: var(--gold); }
 
         .heading {
             font-family: 'Syne', sans-serif;
@@ -190,8 +159,6 @@
             text-decoration: none;
         }
 
-        /* FORM */
-
         .form {
             display: flex;
             flex-direction: column;
@@ -207,9 +174,7 @@
             letter-spacing: .06em;
         }
 
-        .input-wrap {
-            position: relative;
-        }
+        .input-wrap { position: relative; }
 
         .icon {
             position: absolute;
@@ -222,37 +187,22 @@
         .input-wrap input {
             width: 100%;
             padding: .85rem 1rem .85rem 2.7rem;
-
             background: var(--surface);
-
             border: 1px solid var(--border);
-
             border-radius: 12px;
-
             outline: none;
-
             color: var(--text);
-
             font-size: .92rem;
-
             transition: .25s;
         }
 
-        .input-wrap input::placeholder {
-            color: var(--muted);
-        }
+        .input-wrap input::placeholder { color: var(--muted); }
 
         .input-wrap input:focus {
             border-color: rgba(232,200,122,0.45);
-
             background: var(--surface-2);
-
-            box-shadow:
-                    0 0 0 3px rgba(232,200,122,0.08),
-                    0 0 20px rgba(232,200,122,0.05);
+            box-shadow: 0 0 0 3px rgba(232,200,122,0.08), 0 0 20px rgba(232,200,122,0.05);
         }
-
-        /* PASSWORD TOGGLE */
 
         .pw-toggle {
             position: absolute;
@@ -264,8 +214,6 @@
             color: var(--muted);
             cursor: pointer;
         }
-
-        /* OPTIONS */
 
         .options-row {
             display: flex;
@@ -282,9 +230,7 @@
             font-size: .82rem;
         }
 
-        .remember input {
-            accent-color: var(--gold);
-        }
+        .remember input { accent-color: var(--gold); }
 
         .forgot {
             color: var(--gold);
@@ -292,44 +238,25 @@
             font-size: .82rem;
         }
 
-        /* BUTTON */
-
         .btn-submit {
             width: 100%;
             padding: .9rem;
-
             border: none;
-
             border-radius: 12px;
-
             cursor: pointer;
-
-            background: linear-gradient(
-                    135deg,
-                    var(--gold),
-                    #d4a843
-            );
-
+            background: linear-gradient(135deg, var(--gold), #d4a843);
             color: var(--ink);
-
             font-family: 'Syne', sans-serif;
             font-weight: 700;
             letter-spacing: .04em;
-
             transition: .25s;
-
-            box-shadow:
-                    0 8px 24px rgba(232,200,122,0.25);
+            box-shadow: 0 8px 24px rgba(232,200,122,0.25);
         }
 
         .btn-submit:hover {
             transform: translateY(-2px);
-
-            box-shadow:
-                    0 12px 30px rgba(232,200,122,0.3);
+            box-shadow: 0 12px 30px rgba(232,200,122,0.3);
         }
-
-        /* ERROR */
 
         .error {
             display: none;
@@ -338,18 +265,10 @@
             margin-top: -.4rem;
         }
 
-        /* RESPONSIVE */
-
         @media(max-width: 500px) {
-            .card {
-                padding: 2rem 1.5rem;
-            }
-
-            .heading {
-                font-size: 1.6rem;
-            }
+            .card { padding: 2rem 1.5rem; }
+            .heading { font-size: 1.6rem; }
         }
-
     </style>
 </head>
 
@@ -362,206 +281,114 @@
 </div>
 
 <div class="page">
-
     <div class="card">
 
-        <!-- LOGO -->
         <div class="logo-row">
             <div class="logo-icon">⚡</div>
-            <div class="logo-name">
-                Free<span>Lance</span> Portal
-            </div>
+            <div class="logo-name">Free<span>Lance</span> Portal</div>
         </div>
 
-        <!-- HEADING -->
         <h1 class="heading">Welcome back</h1>
-
         <p class="subheading">
-            Don’t have an account?
+            Don't have an account?
             <a href="register.html">Create one</a>
         </p>
 
-        <!-- FORM -->
         <form class="form" id="login-form">
 
-            <!-- EMAIL -->
             <div class="field">
-
                 <label>Email Address</label>
-
                 <div class="input-wrap">
-
                     <svg class="icon" xmlns="http://www.w3.org/2000/svg"
                          width="15" height="15" viewBox="0 0 24 24"
                          fill="none" stroke="currentColor" stroke-width="2">
-
                         <rect width="20" height="16" x="2" y="4" rx="2"/>
                         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-
                     </svg>
-
-                    <input
-                            type="email"
-                            id="email"
-                            placeholder="you@example.com"
-                            required
-                    >
-
+                    <input type="email" id="email" placeholder="you@example.com" required>
                 </div>
-
             </div>
 
-            <!-- PASSWORD -->
             <div class="field">
-
                 <label>Password</label>
-
                 <div class="input-wrap">
-
                     <svg class="icon" xmlns="http://www.w3.org/2000/svg"
                          width="15" height="15" viewBox="0 0 24 24"
                          fill="none" stroke="currentColor" stroke-width="2">
-
                         <rect width="18" height="11" x="3" y="11" rx="2"/>
                         <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-
                     </svg>
-
-                    <input
-                            type="password"
-                            id="password"
-                            placeholder="Enter your password"
-                            required
-                    >
-
-                    <button
-                            type="button"
-                            class="pw-toggle"
-                            onclick="togglePassword()">
-
-                        👁
-
-                    </button>
-
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <button type="button" class="pw-toggle" onclick="togglePassword()">👁</button>
                 </div>
-
             </div>
 
-            <!-- OPTIONS -->
             <div class="options-row">
-
                 <label class="remember">
-                    <input type="checkbox">
-                    Remember me
+                    <input type="checkbox"> Remember me
                 </label>
-
-                <a href="#" class="forgot">
-                    Forgot password?
-                </a>
-
+                <a href="#" class="forgot">Forgot password?</a>
             </div>
 
-            <!-- ERROR -->
-            <div class="error" id="error-msg">
-                Invalid email or password
-            </div>
+            <div class="error" id="error-msg">Invalid email or password</div>
 
-            <!-- BUTTON -->
-            <button type="submit" class="btn-submit" id="login-btn">
-                Sign In →
-            </button>
+            <button type="submit" class="btn-submit" id="login-btn">Sign In →</button>
 
         </form>
-
     </div>
-
 </div>
 
 <script>
-
     function togglePassword() {
-
         const input = document.getElementById('password');
-
-        input.type =
-            input.type === 'password'
-                ? 'text'
-                : 'password';
+        input.type = input.type === 'password' ? 'text' : 'password';
     }
 
-    document
-        .getElementById('login-form')
-        .addEventListener('submit', function(e) {
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+        e.preventDefault();
 
-            e.preventDefault();
+        const email    = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+        const btn      = document.getElementById('login-btn');
+        const error    = document.getElementById('error-msg');
 
-            const email =
-                document.getElementById('email').value.trim();
+        error.style.display = 'none';
+        btn.innerHTML = 'Signing in...';
+        btn.disabled  = true;
 
-            const password =
-                document.getElementById('password').value;
-
-            const btn =
-                document.getElementById('login-btn');
-
-            const error =
-                document.getElementById('error-msg');
-
-            error.style.display = 'none';
-
-            btn.innerHTML = 'Signing in...';
-            btn.disabled = true;
-
-            fetch('/api/auth/login', {
-
-                method: 'POST',
-
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-
-                body: JSON.stringify({
-                    email,
-                    password
-                })
-
-            })
-
-                .then(res => res.json())
-
-                .then(data => {
-
-                    if(data.success) {
-
-                        btn.innerHTML = '✓ Welcome Back';
-
-                        setTimeout(() => {
-                            window.location.href = '/dashboard';
-                        }, 1200);
-
-                    } else {
-
-                        error.style.display = 'block';
-
-                        btn.innerHTML = 'Sign In →';
-
-                        btn.disabled = false;
-                    }
-
-                })
-
-                .catch(() => {
-
-                    error.style.display = 'block';
-
-                    btn.innerHTML = 'Sign In →';
-
-                    btn.disabled = false;
-                });
-
+        fetch('/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        })
+        .then(res => {
+            // ✅ After — redirects based on role
+            if (res.ok) {
+                return res.json();
+            }
+            throw new Error('Invalid credentials');
+        })
+        .then(data => {
+            btn.innerHTML = '✓ Welcome Back';
+            localStorage.setItem('user', JSON.stringify(data));
+            setTimeout(() => {
+                if (data.role === 'CLIENT') {
+                    window.location.href = '/client.html';
+                } else if (data.role === 'FREELANCER') {
+                    window.location.href = '/freelancer.html';
+                } else {
+                    window.location.href = '/client.html'; // fallback
+                }
+            }, 1200);
+        })
+        .catch(() => {
+            error.style.display = 'block';
+            btn.innerHTML = 'Sign In →';
+            btn.disabled  = false;
         });
-
-</script>
+    });
+    
+    </script>
 
 </body>
 </html>

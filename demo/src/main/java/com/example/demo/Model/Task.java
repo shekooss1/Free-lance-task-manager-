@@ -3,12 +3,18 @@ package com.example.demo.Model;
 
 
 import java.sql.Date;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 
@@ -21,35 +27,41 @@ public class Task {
     private Long id ;
     private String title ;
     private String description ;
-    private TaskStatus Status ;
+    private TaskStatus status ;
     private Piriority piriority ;
+    private Double budget ; 
     Date dueDate ;
-    
-@ManyToOne
+       
+    @JsonIgnore 
+    @ManyToOne
     @JoinColumn(name = "client_id")
     private User client;      
-
+    
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "freelancer_id")
     private User freelancer;  
 
-public Task(String description, Date dueDate, long id, Piriority piriority, TaskStatus status, String title) {
-        this.description = description;
-        this.dueDate = dueDate;
-        this.id = id;
-        this.piriority = piriority;
-        this.Status = status;
-        this.title = title;
-    }
-    public Task() {
+@JsonIgnore
+@OneToMany(mappedBy = "task", cascade = CascadeType.ALL)
+private List<TaskHistory> history;
+
+public Task(Double budget,String description, Date dueDate, Long id, Piriority piriority, TaskStatus status, String title) {
+   this.budget=budget;
+    this.description = description;
+    this.dueDate = dueDate;
+    this.id = id;
+    this.piriority = piriority;
+    this.status = status;
+    this.title = title;
+}    public Task() {
     }
 
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -70,11 +82,11 @@ public Task(String description, Date dueDate, long id, Piriority piriority, Task
     }
 
     public TaskStatus getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(TaskStatus status) {
-        this.Status = status;
+        this.status = status;
     }
 
     public Piriority getPiriority() {
@@ -109,5 +121,16 @@ public Task(String description, Date dueDate, long id, Piriority piriority, Task
         this.freelancer = freelancer;
     }
 
-
+    public List<TaskHistory> getHistory() {
+        return history;
+    }
+    public void setHistory(List<TaskHistory> history) {
+        this.history = history;
+    }
+    public Double getBudget() {
+        return budget;
+    }
+    public void setBudget(Double budget) {
+        this.budget = budget;
+    }
 }
