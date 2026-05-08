@@ -38,7 +38,7 @@ public Task(String description, Date dueDate, long id, Piriority piriority, Task
         this.dueDate = dueDate;
         this.id = id;
         this.piriority = piriority;
-        this.Status = Status;
+        this.Status = status;
         this.title = title;
     }
     public Task() {
