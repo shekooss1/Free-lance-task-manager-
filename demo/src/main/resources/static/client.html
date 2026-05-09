@@ -16,24 +16,17 @@
   --text:#e8e9f0;--text-2:#c0c3d4;
 }
 html,body{min-height:100%;font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);overflow-x:hidden;}
-
-/* BG */
 .bg{position:fixed;inset:0;z-index:0;
   background:radial-gradient(ellipse 80% 60% at 20% 10%,#141829 0%,transparent 65%),
   radial-gradient(ellipse 60% 80% at 80% 90%,#0d1a18 0%,transparent 60%),#0b0c10;}
 .bg-grid{position:absolute;inset:0;
   background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),
-  linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);
-  background-size:48px 48px;}
+  linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:48px 48px;}
 .bg-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;animation:drift 18s ease-in-out infinite alternate;}
 .o1{width:500px;height:500px;top:-140px;left:-100px;background:radial-gradient(circle,#1a2a4a 0%,transparent 75%);animation-duration:22s;}
 .o2{width:420px;height:420px;bottom:-120px;right:-100px;background:radial-gradient(circle,#0d2a25 0%,transparent 75%);animation-duration:17s;}
 @keyframes drift{from{transform:translate(0,0) scale(1);}to{transform:translate(30px,25px) scale(1.06);}}
-
-/* LAYOUT */
 .app{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;}
-
-/* NAVBAR */
 nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;
   border-bottom:1px solid var(--border);backdrop-filter:blur(20px);
   background:rgba(11,12,16,0.6);position:sticky;top:0;z-index:100;}
@@ -48,22 +41,16 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2
 .nav-user{font-size:.85rem;color:var(--muted-2);}
 .nav-user strong{color:var(--gold);}
 .btn-logout{padding:.45rem 1rem;border:1px solid var(--border-2);border-radius:8px;
-  background:transparent;color:var(--muted-2);font-size:.8rem;cursor:pointer;
-  transition:.2s;font-family:'DM Sans',sans-serif;}
+  background:transparent;color:var(--muted-2);font-size:.8rem;cursor:pointer;transition:.2s;font-family:'DM Sans',sans-serif;}
 .btn-logout:hover{border-color:var(--red);color:var(--red);}
-
-/* MAIN */
-main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
-
-/* PAGE HEADER */
+main{flex:1;padding:2rem;max-width:1200px;width:100%;margin:0 auto;}
 .page-header{margin-bottom:2rem;animation:fadeUp .5s ease forwards;}
 .page-header h1{font-family:'Syne',sans-serif;font-size:1.8rem;margin-bottom:.3rem;}
 .page-header p{color:var(--muted-2);font-size:.9rem;}
 
-/* STATS ROW */
+/* STATS */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem;}
-.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;
-  padding:1.2rem 1.4rem;animation:fadeUp .5s ease forwards;}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.2rem 1.4rem;animation:fadeUp .5s ease forwards;}
 .stat-card:nth-child(1){animation-delay:.1s;}
 .stat-card:nth-child(2){animation-delay:.2s;}
 .stat-card:nth-child(3){animation-delay:.3s;}
@@ -73,15 +60,13 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
 .stat-value.gold{color:var(--gold);}
 .stat-value.teal{color:var(--teal);}
 .stat-value.green{color:var(--green);}
-.stat-value.red{color:var(--red);}
 
-/* GRID */
-.content-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:1.5rem;}
+/* MAIN GRID */
+.content-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:1.5rem;margin-bottom:1.5rem;}
 
-/* CARD */
+/* CARDS */
 .card{background:linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));
-  border:1px solid var(--border-2);border-radius:20px;padding:1.6rem;
-  animation:fadeUp .5s ease .5s both;}
+  border:1px solid var(--border-2);border-radius:20px;padding:1.6rem;animation:fadeUp .5s ease .5s both;}
 .card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.4rem;}
 .card-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;}
 .card-badge{font-size:.72rem;padding:.3rem .7rem;border-radius:99px;
@@ -89,8 +74,7 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
 
 /* FORM */
 .form{display:flex;flex-direction:column;gap:1rem;}
-.field label{display:block;font-size:.75rem;color:var(--muted-2);
-  text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;}
+.field label{display:block;font-size:.75rem;color:var(--muted-2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;}
 .field input,.field select,.field textarea{
   width:100%;background:var(--surface);border:1px solid var(--border);
   border-radius:10px;padding:.7rem 1rem;color:var(--text);font-size:.88rem;
@@ -108,19 +92,19 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
 .btn-create:disabled{opacity:.6;cursor:not-allowed;transform:none;}
 
 /* TASKS LIST */
-.tasks-list{display:flex;flex-direction:column;gap:.8rem;max-height:520px;overflow-y:auto;padding-right:4px;}
+.tasks-list{display:flex;flex-direction:column;gap:.8rem;max-height:560px;overflow-y:auto;padding-right:4px;}
 .tasks-list::-webkit-scrollbar{width:4px;}
 .tasks-list::-webkit-scrollbar-track{background:transparent;}
 .tasks-list::-webkit-scrollbar-thumb{background:var(--border-2);border-radius:99px;}
-
-.task-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;
-  padding:1rem 1.1rem;transition:.2s;cursor:default;}
+.task-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem 1.1rem;transition:.2s;}
 .task-item:hover{border-color:var(--border-2);background:var(--surface-2);}
 .task-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.5rem;margin-bottom:.5rem;}
 .task-title{font-weight:500;font-size:.9rem;}
-.task-desc{font-size:.8rem;color:var(--muted-2);margin-bottom:.7rem;line-height:1.5;}
-.task-footer{display:flex;align-items:center;justify-content:space-between;}
-.task-meta{display:flex;gap:.5rem;align-items:center;}
+.task-desc{font-size:.8rem;color:var(--muted-2);margin-bottom:.5rem;line-height:1.5;}
+.task-budget-tag{font-size:.75rem;color:var(--gold);margin-bottom:.6rem;}
+.task-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.4rem;}
+.task-meta{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap;}
+.task-actions{display:flex;gap:.4rem;flex-wrap:wrap;}
 
 /* BADGES */
 .badge{font-size:.68rem;padding:.25rem .65rem;border-radius:99px;font-weight:500;letter-spacing:.03em;}
@@ -131,18 +115,66 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
 .badge-high{background:rgba(248,113,113,0.1);color:var(--red);}
 .badge-medium{background:rgba(232,200,122,0.1);color:var(--gold);}
 .badge-low{background:rgba(74,222,128,0.1);color:var(--green);}
+.badge-pending{background:rgba(160,165,188,0.12);color:var(--muted-2);border:1px solid rgba(160,165,188,0.2);}
+.badge-accepted{background:rgba(74,222,128,0.1);color:var(--green);border:1px solid rgba(74,222,128,0.2);}
+.badge-rejected{background:rgba(248,113,113,0.1);color:var(--red);border:1px solid rgba(248,113,113,0.2);}
 
-.btn-cancel{padding:.3rem .75rem;font-size:.75rem;border:1px solid rgba(248,113,113,0.3);
-  border-radius:7px;background:transparent;color:var(--red);cursor:pointer;
-  font-family:'DM Sans',sans-serif;transition:.2s;}
-.btn-cancel:hover{background:rgba(248,113,113,0.1);}
+/* TASK BUTTONS */
+.btn-sm{padding:.28rem .7rem;font-size:.74rem;border-radius:7px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:.2s;border:1px solid;}
+.btn-red{border-color:rgba(248,113,113,0.3);color:var(--red);background:transparent;}
+.btn-red:hover{background:rgba(248,113,113,0.1);}
+.btn-gold{border-color:rgba(232,200,122,0.3);color:var(--gold);background:transparent;}
+.btn-gold:hover{background:rgba(232,200,122,0.08);}
+.btn-teal{border-color:rgba(79,209,197,0.3);color:var(--teal);background:transparent;}
+.btn-teal:hover{background:rgba(79,209,197,0.08);}
 
-/* EMPTY */
+/* BIDS PANEL */
+.bids-panel{background:linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));
+  border:1px solid var(--border-2);border-radius:20px;padding:1.6rem;animation:fadeUp .5s ease .7s both;}
+.bids-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.2rem;}
+.task-tab{padding:.35rem .85rem;font-size:.78rem;border:1px solid var(--border);border-radius:8px;
+  background:transparent;color:var(--muted-2);cursor:pointer;font-family:'DM Sans',sans-serif;transition:.2s;}
+.task-tab.active{border-color:rgba(232,200,122,0.4);color:var(--gold);background:rgba(232,200,122,0.08);}
+.task-tab:hover:not(.active){color:var(--text);border-color:var(--border-2);}
+.bids-list{display:flex;flex-direction:column;gap:.7rem;max-height:380px;overflow-y:auto;padding-right:4px;}
+.bids-list::-webkit-scrollbar{width:4px;}
+.bids-list::-webkit-scrollbar-thumb{background:var(--border-2);border-radius:99px;}
+
+/* BID ITEM */
+.bid-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;transition:.2s;}
+.bid-item:hover{border-color:var(--border-2);}
+.bid-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem;}
+.bid-freelancer{font-weight:500;font-size:.88rem;}
+.bid-amount{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--gold);}
+.bid-actions{display:flex;gap:.5rem;align-items:center;margin-top:.6rem;flex-wrap:wrap;}
+.btn-accept-bid{padding:.35rem .9rem;font-size:.78rem;border:none;border-radius:8px;
+  background:linear-gradient(135deg,var(--green),#22c55e);color:#0b0c10;
+  font-family:'Syne',sans-serif;font-weight:700;cursor:pointer;transition:.2s;}
+.btn-accept-bid:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(74,222,128,0.3);}
+.btn-reject-bid{padding:.35rem .9rem;font-size:.78rem;border:1px solid rgba(248,113,113,0.3);
+  border-radius:8px;background:transparent;color:var(--red);cursor:pointer;font-family:'DM Sans',sans-serif;transition:.2s;}
+.btn-reject-bid:hover{background:rgba(248,113,113,0.1);}
+
+/* EDIT MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:200;
+  display:none;align-items:center;justify-content:center;backdrop-filter:blur(6px);}
+.modal-overlay.open{display:flex;}
+.modal{background:#141520;border:1px solid var(--border-2);border-radius:20px;
+  padding:2rem;width:100%;max-width:420px;animation:fadeUp .3s ease forwards;}
+.modal h3{font-family:'Syne',sans-serif;font-size:1.1rem;margin-bottom:1.4rem;}
+.modal-actions{display:flex;gap:.7rem;margin-top:1.2rem;}
+.btn-modal-save{flex:1;padding:.75rem;border:none;border-radius:10px;cursor:pointer;
+  background:linear-gradient(135deg,var(--gold),#d4a843);color:var(--ink);
+  font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;transition:.2s;}
+.btn-modal-save:hover{transform:translateY(-1px);}
+.btn-modal-cancel{flex:1;padding:.75rem;border:1px solid var(--border-2);border-radius:10px;
+  cursor:pointer;background:transparent;color:var(--muted-2);font-family:'DM Sans',sans-serif;transition:.2s;}
+.btn-modal-cancel:hover{color:var(--red);border-color:rgba(248,113,113,0.3);}
+
+/* EMPTY + TOAST */
 .empty{text-align:center;padding:2.5rem 1rem;color:var(--muted);}
 .empty .icon{font-size:2.5rem;margin-bottom:.75rem;}
 .empty p{font-size:.85rem;}
-
-/* TOAST */
 .toast{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;
   padding:.8rem 1.3rem;border-radius:12px;font-size:.85rem;font-weight:500;
   transform:translateY(80px);opacity:0;transition:.3s ease;pointer-events:none;}
@@ -162,8 +194,26 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
 <body>
 <div class="bg"><div class="bg-grid"></div><div class="bg-orb o1"></div><div class="bg-orb o2"></div></div>
 
+<!-- EDIT MODAL -->
+<div class="modal-overlay" id="edit-modal">
+  <div class="modal">
+    <h3>✏️ Edit Task Budget</h3>
+    <div class="field">
+      <label>Task</label>
+      <input type="text" id="modal-task-title" readonly style="opacity:.5;cursor:not-allowed;"/>
+    </div>
+    <div class="field" style="margin-top:.8rem;">
+      <label>Budget (USD)</label>
+      <input type="number" id="modal-budget" placeholder="e.g. 500" min="1"/>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-modal-cancel" onclick="closeEditModal()">Cancel</button>
+      <button class="btn-modal-save" onclick="saveEditTask()">Save Changes</button>
+    </div>
+  </div>
+</div>
+
 <div class="app">
-  <!-- NAV -->
   <nav>
     <div class="nav-logo">
       <div class="logo-icon">⚡</div>
@@ -176,7 +226,6 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
   </nav>
 
   <main>
-    <!-- HEADER -->
     <div class="page-header">
       <h1>Client Dashboard</h1>
       <p>Manage your tasks and track progress</p>
@@ -190,8 +239,9 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
       <div class="stat-card"><div class="stat-label">Completed</div><div class="stat-value green" id="stat-done">0</div></div>
     </div>
 
-    <!-- GRID -->
+    <!-- CREATE + MY TASKS -->
     <div class="content-grid">
+
       <!-- CREATE TASK -->
       <div class="card">
         <div class="card-header">
@@ -208,6 +258,10 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
             <textarea id="t-desc" rows="3" placeholder="Describe what you need..."></textarea>
           </div>
           <div class="field">
+            <label>Budget (USD) — optional</label>
+            <input type="number" id="t-budget" placeholder="e.g. 200" min="1"/>
+          </div>
+          <div class="field">
             <label>Priority</label>
             <select id="t-priority">
               <option value="HIGH">🔴 High</option>
@@ -219,7 +273,7 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
         </form>
       </div>
 
-      <!-- TASKS LIST -->
+      <!-- MY TASKS -->
       <div class="card">
         <div class="card-header">
           <span class="card-title">My Tasks</span>
@@ -229,20 +283,35 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
           <div class="empty"><div class="icon">📋</div><p>No tasks yet. Create your first one!</p></div>
         </div>
       </div>
+
     </div>
+
+    <!-- BIDS PANEL -->
+    <div class="bids-panel">
+      <div class="card-header">
+        <span class="card-title">💰 Bids on My Tasks</span>
+        <span class="card-badge" id="bids-badge">0 bids</span>
+      </div>
+      <div class="bids-tabs" id="bids-tabs">
+        <span style="font-size:.82rem;color:var(--muted);">No open tasks yet.</span>
+      </div>
+      <div class="bids-list" id="bids-list">
+        <div class="empty"><div class="icon">💼</div><p>Select a task above to view its bids.</p></div>
+      </div>
+    </div>
+
   </main>
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-  // Get logged in user from localStorage
   const user = JSON.parse(localStorage.getItem('user') || '{}');
   const clientId = user.id;
-
   if (!clientId) window.location.href = '/login.html';
-
   document.getElementById('nav-name').textContent = user.name || 'Client';
+
+  let editingTaskId = null;
 
   function showToast(msg, type='success') {
     const t = document.getElementById('toast');
@@ -254,33 +323,35 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
   function getPriorityBadge(p) {
     if (!p) return '';
     const map = { HIGH:'badge-high', MEDIUM:'badge-medium', LOW:'badge-low' };
-    return `<span class="badge ${map[p] || ''}">${p}</span>`;
+    return `<span class="badge ${map[p]||''}">${p}</span>`;
   }
 
   function getStatusBadge(s) {
-    const map = {
-      OPEN:'badge-open', IN_PROGRESS:'badge-progress',
-      COMPLETED:'badge-done', CANCELLED:'badge-cancelled'
-    };
+    const map = { OPEN:'badge-open', IN_PROGRESS:'badge-progress', COMPLETED:'badge-done', CANCELLED:'badge-cancelled' };
     const labels = { OPEN:'Open', IN_PROGRESS:'In Progress', COMPLETED:'Completed', CANCELLED:'Cancelled' };
-    return `<span class="badge ${map[s] || ''}">${labels[s] || s}</span>`;
+    return `<span class="badge ${map[s]||''}">${labels[s]||s}</span>`;
   }
 
-  function updateStats(tasks) {
+  function getBidStatusBadge(s) {
+    const map = { PENDING:'badge-pending', ACCEPTED:'badge-accepted', REJECTED:'badge-rejected' };
+    return `<span class="badge ${map[s]||''}">${s}</span>`;
+  }
+
+  // ── RENDER TASKS ──
+  function renderTasks(tasks) {
     document.getElementById('stat-total').textContent = tasks.length;
     document.getElementById('stat-open').textContent = tasks.filter(t=>t.status==='OPEN').length;
     document.getElementById('stat-progress').textContent = tasks.filter(t=>t.status==='IN_PROGRESS').length;
     document.getElementById('stat-done').textContent = tasks.filter(t=>t.status==='COMPLETED').length;
     document.getElementById('tasks-count').textContent = tasks.length + ' tasks';
-  }
 
-  function renderTasks(tasks) {
-    updateStats(tasks);
     const list = document.getElementById('tasks-list');
     if (!tasks.length) {
       list.innerHTML = '<div class="empty"><div class="icon">📋</div><p>No tasks yet. Create your first one!</p></div>';
+      renderBidsTabs([]);
       return;
     }
+
     list.innerHTML = tasks.map(task => `
       <div class="task-item" id="task-${task.id}">
         <div class="task-top">
@@ -288,18 +359,118 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
           ${getStatusBadge(task.status)}
         </div>
         <div class="task-desc">${task.description || 'No description'}</div>
+        ${task.budget ? `<div class="task-budget-tag">💰 Budget: $${task.budget}</div>` : ''}
         <div class="task-footer">
-          <div class="task-meta">
-            ${getPriorityBadge(task.piriority || task.priority)}
+          <div class="task-meta">${getPriorityBadge(task.piriority || task.priority)}</div>
+          <div class="task-actions">
+            ${task.status === 'OPEN' ? `
+              <button class="btn-sm btn-gold" onclick="loadBidsForTask(${task.id}, '${task.title}', null)">Bids 💰</button>
+              <button class="btn-sm btn-teal" onclick="openEditModal(${task.id}, '${task.title}', ${task.budget||0})">Edit ✏️</button>
+              <button class="btn-sm btn-red" onclick="cancelTask(${task.id})">Cancel</button>
+            ` : task.status === 'IN_PROGRESS' ? `
+              <button class="btn-sm btn-red" onclick="cancelTask(${task.id})">Cancel</button>
+            ` : ''}
           </div>
-          ${task.status === 'OPEN' || task.status === 'IN_PROGRESS'
-            ? `<button class="btn-cancel" onclick="cancelTask(${task.id})">Cancel</button>`
-            : ''}
         </div>
       </div>
     `).join('');
+
+    // Build bids tabs from open tasks only
+    const openTasks = tasks.filter(t => t.status === 'OPEN');
+    renderBidsTabs(openTasks);
   }
 
+  // ── BIDS TABS ──
+  function renderBidsTabs(tasks) {
+    const tabs = document.getElementById('bids-tabs');
+    if (!tasks.length) {
+      tabs.innerHTML = '<span style="font-size:.82rem;color:var(--muted);">No open tasks.</span>';
+      document.getElementById('bids-list').innerHTML =
+        '<div class="empty"><div class="icon">📭</div><p>No open tasks to show bids for.</p></div>';
+      return;
+    }
+    tabs.innerHTML = tasks.map((t, i) =>
+      `<button class="task-tab${i===0?' active':''}" onclick="loadBidsForTask(${t.id},'${t.title}',this)">${t.title}</button>`
+    ).join('');
+    loadBidsForTask(tasks[0].id, tasks[0].title, null);
+  }
+
+  // ── LOAD BIDS ──
+  function loadBidsForTask(taskId, taskTitle, btnEl) {
+    if (btnEl) {
+      document.querySelectorAll('.task-tab').forEach(b => b.classList.remove('active'));
+      btnEl.classList.add('active');
+    }
+    const list = document.getElementById('bids-list');
+    list.innerHTML = '<div class="empty"><div class="icon">⏳</div><p>Loading bids...</p></div>';
+
+    fetch(`/api/bids/task/${taskId}`)
+      .then(res => res.json())
+      .then(bids => {
+        document.getElementById('bids-badge').textContent = bids.length + ' bids';
+        if (!bids.length) {
+          list.innerHTML = `<div class="empty"><div class="icon">📭</div><p>No bids on "<b>${taskTitle}</b>" yet.</p></div>`;
+          return;
+        }
+        list.innerHTML = bids.map(bid => `
+          <div class="bid-item" id="bid-${bid.id}">
+            <div class="bid-row">
+              <span class="bid-freelancer">👤 ${bid.freelancer?.name || 'Freelancer'}</span>
+              <span class="bid-amount">$${bid.amount}</span>
+            </div>
+            <div class="bid-actions">
+              ${getBidStatusBadge(bid.status)}
+              ${bid.status === 'PENDING' ? `
+                <button class="btn-accept-bid" onclick="acceptBid(${bid.id},${taskId})">✓ Accept</button>
+                <button class="btn-reject-bid" onclick="rejectBid(${bid.id},${taskId},'${taskTitle}')">✕ Reject</button>
+              ` : ''}
+            </div>
+          </div>
+        `).join('');
+      })
+      .catch(() => showToast('Failed to load bids', 'error'));
+  }
+
+  function acceptBid(bidId, taskId) {
+    if (!confirm('Accept this bid? The freelancer will be assigned to the task.')) return;
+    fetch(`/api/bids/${bidId}/accept`, { method: 'PUT' })
+      .then(res => res.json())
+      .then(() => { showToast('Bid accepted! Task is now In Progress 🎉'); loadTasks(); })
+      .catch(() => showToast('Failed to accept bid', 'error'));
+  }
+
+  function rejectBid(bidId, taskId, taskTitle) {
+    fetch(`/api/bids/${bidId}/reject`, { method: 'PUT' })
+      .then(res => res.json())
+      .then(() => { showToast('Bid rejected.'); loadBidsForTask(taskId, taskTitle, null); })
+      .catch(() => showToast('Failed to reject bid', 'error'));
+  }
+
+  // ── EDIT MODAL ──
+  function openEditModal(taskId, taskTitle, budget) {
+    editingTaskId = taskId;
+    document.getElementById('modal-task-title').value = taskTitle;
+    document.getElementById('modal-budget').value = budget || '';
+    document.getElementById('edit-modal').classList.add('open');
+  }
+
+  function closeEditModal() {
+    document.getElementById('edit-modal').classList.remove('open');
+    editingTaskId = null;
+  }
+
+  function saveEditTask() {
+    const budget = parseFloat(document.getElementById('modal-budget').value);
+    if (!budget || budget <= 0) { showToast('Enter a valid budget', 'error'); return; }
+    fetch(`/api/tasks/${editingTaskId}/budget?budget=${budget}`, { method: 'PUT' })
+      .then(res => {
+        if (res.ok) { showToast('Budget updated ✓'); closeEditModal(); loadTasks(); }
+        else showToast('Failed to update budget', 'error');
+      })
+      .catch(() => showToast('Network error', 'error'));
+  }
+
+  // ── LOAD TASKS ──
   function loadTasks() {
     fetch(`/api/users/${clientId}/tasks`)
       .then(res => res.json())
@@ -307,18 +478,19 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
       .catch(() => showToast('Failed to load tasks', 'error'));
   }
 
+  // ── CREATE TASK ──
   document.getElementById('create-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const btn = document.getElementById('create-btn');
     btn.textContent = 'Creating...';
     btn.disabled = true;
-
+    const budgetVal = document.getElementById('t-budget').value;
     const payload = {
       title: document.getElementById('t-title').value.trim(),
       description: document.getElementById('t-desc').value.trim(),
-      piriority: document.getElementById('t-priority').value
+      piriority: document.getElementById('t-priority').value,
+      budget: budgetVal ? parseFloat(budgetVal) : null
     };
-
     fetch(`/api/tasks/create?clientId=${clientId}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -326,19 +498,11 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
     })
     .then(res => res.json())
     .then(data => {
-      if (data.id) {
-        showToast('Task created successfully!');
-        document.getElementById('create-form').reset();
-        loadTasks();
-      } else {
-        showToast(data.message || 'Failed to create task', 'error');
-      }
+      if (data.id) { showToast('Task created!'); document.getElementById('create-form').reset(); loadTasks(); }
+      else showToast(data.message || 'Failed to create task', 'error');
     })
     .catch(() => showToast('Network error', 'error'))
-    .finally(() => {
-      btn.textContent = 'Create Task →';
-      btn.disabled = false;
-    });
+    .finally(() => { btn.textContent = 'Create Task →'; btn.disabled = false; });
   });
 
   function cancelTask(taskId) {
@@ -354,7 +518,6 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
     window.location.href = '/login.html';
   }
 
-  // Load on start
   loadTasks();
 </script>
 </body>

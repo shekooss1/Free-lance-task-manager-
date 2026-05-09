@@ -88,4 +88,8 @@ public class TaskService {
         }
         taskRepository.deleteById(taskId);
     }
+
+   public Task saveTask(Task task) {
+    return taskRepository.save(task);
+}
 }

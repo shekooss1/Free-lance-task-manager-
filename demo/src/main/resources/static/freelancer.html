@@ -72,11 +72,9 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
 .stat-value.teal{color:var(--teal);}
 .stat-value.green{color:var(--green);}
 
-/* PANELS */
 .panel{display:none;}
 .panel.active{display:block;animation:fadeUp .4s ease forwards;}
 
-/* TASKS GRID */
 .tasks-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;}
 
 .task-card{background:linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));
@@ -85,9 +83,39 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
   box-shadow:0 8px 24px rgba(0,0,0,0.3);}
 .task-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.7rem;gap:.5rem;}
 .task-card-title{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:600;line-height:1.3;}
-.task-card-desc{font-size:.82rem;color:var(--muted-2);margin-bottom:1rem;line-height:1.5;}
+.task-card-desc{font-size:.82rem;color:var(--muted-2);margin-bottom:.7rem;line-height:1.5;}
 .task-card-footer{display:flex;justify-content:space-between;align-items:center;}
 .task-card-meta{display:flex;gap:.4rem;flex-wrap:wrap;}
+
+/* BUDGET DISPLAY */
+.task-budget{font-size:.8rem;color:var(--gold);margin-bottom:.8rem;
+  display:flex;align-items:center;gap:.4rem;}
+.task-budget span{background:rgba(232,200,122,0.1);border:1px solid rgba(232,200,122,0.2);
+  padding:.2rem .6rem;border-radius:99px;}
+
+/* BID FORM — inline inside task card */
+.bid-form{margin-top:.9rem;padding-top:.9rem;border-top:1px solid var(--border);
+  display:none;animation:fadeUp .3s ease forwards;}
+.bid-form.open{display:block;}
+.bid-form label{font-size:.72rem;color:var(--muted-2);text-transform:uppercase;
+  letter-spacing:.06em;display:block;margin-bottom:.35rem;}
+.bid-input-row{display:flex;gap:.5rem;align-items:center;}
+.bid-input-wrap{position:relative;flex:1;}
+.bid-currency{position:absolute;left:10px;top:50%;transform:translateY(-50%);
+  color:var(--gold);font-size:.85rem;font-weight:600;}
+.bid-input{width:100%;padding:.6rem .8rem .6rem 1.6rem;background:var(--surface);
+  border:1px solid var(--border);border-radius:8px;color:var(--text);
+  font-size:.88rem;outline:none;transition:.2s;}
+.bid-input:focus{border-color:rgba(232,200,122,0.4);background:var(--surface-2);}
+.bid-input::placeholder{color:var(--muted);}
+.btn-bid-submit{padding:.6rem 1rem;font-size:.8rem;border:none;border-radius:8px;
+  background:linear-gradient(135deg,var(--gold),#d4a843);color:var(--ink);
+  font-family:'Syne',sans-serif;font-weight:700;cursor:pointer;transition:.2s;white-space:nowrap;}
+.btn-bid-submit:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(232,200,122,0.3);}
+.btn-bid-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+.btn-cancel-bid{padding:.6rem .8rem;font-size:.78rem;border:1px solid var(--border-2);
+  border-radius:8px;background:transparent;color:var(--muted-2);cursor:pointer;transition:.2s;}
+.btn-cancel-bid:hover{color:var(--red);border-color:rgba(248,113,113,0.3);}
 
 /* MY TASKS */
 .my-tasks-list{display:flex;flex-direction:column;gap:.8rem;}
@@ -99,7 +127,6 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
 .my-task-desc{font-size:.8rem;color:var(--muted-2);margin-bottom:.7rem;line-height:1.5;}
 .my-task-footer{display:flex;justify-content:space-between;align-items:center;}
 
-/* CARD WRAPPER */
 .section-card{background:linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));
   border:1px solid var(--border-2);border-radius:20px;padding:1.6rem;}
 .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.4rem;}
@@ -107,7 +134,6 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
 .section-badge{font-size:.72rem;padding:.3rem .7rem;border-radius:99px;
   background:rgba(79,209,197,0.1);color:var(--teal);border:1px solid rgba(79,209,197,0.2);}
 
-/* BADGES */
 .badge{font-size:.68rem;padding:.25rem .65rem;border-radius:99px;font-weight:500;}
 .badge-open{background:rgba(232,200,122,0.12);color:var(--gold);border:1px solid rgba(232,200,122,0.2);}
 .badge-progress{background:rgba(79,209,197,0.1);color:var(--teal);border:1px solid rgba(79,209,197,0.2);}
@@ -116,22 +142,24 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
 .badge-medium{background:rgba(232,200,122,0.1);color:var(--gold);}
 .badge-low{background:rgba(74,222,128,0.1);color:var(--green);}
 
-/* BUTTONS */
-.btn-accept{padding:.45rem 1rem;font-size:.8rem;border:none;border-radius:8px;
-  background:linear-gradient(135deg,var(--teal),#38b2ac);color:var(--ink);
+.btn-bid{padding:.45rem 1rem;font-size:.8rem;border:1px solid rgba(232,200,122,0.3);
+  border-radius:8px;background:transparent;color:var(--gold);
   font-family:'Syne',sans-serif;font-weight:700;cursor:pointer;transition:.2s;}
-.btn-accept:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(79,209,197,0.3);}
+.btn-bid:hover{background:rgba(232,200,122,0.08);transform:translateY(-1px);}
+
 .btn-complete{padding:.35rem .9rem;font-size:.78rem;border:1px solid rgba(74,222,128,0.3);
   border-radius:8px;background:transparent;color:var(--green);cursor:pointer;
   font-family:'DM Sans',sans-serif;transition:.2s;}
 .btn-complete:hover{background:rgba(74,222,128,0.1);}
 
-/* EMPTY */
+.bid-sent{font-size:.78rem;color:var(--teal);padding:.45rem .8rem;
+  border:1px solid rgba(79,209,197,0.2);border-radius:8px;
+  background:rgba(79,209,197,0.07);}
+
 .empty{text-align:center;padding:3rem 1rem;color:var(--muted);}
 .empty .icon{font-size:2.5rem;margin-bottom:.75rem;}
 .empty p{font-size:.85rem;}
 
-/* TOAST */
 .toast{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;
   padding:.8rem 1.3rem;border-radius:12px;font-size:.85rem;font-weight:500;
   transform:translateY(80px);opacity:0;transition:.3s ease;pointer-events:none;}
@@ -171,15 +199,14 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
   <main>
     <div class="page-header">
       <h1 id="panel-title">Browse Open Tasks</h1>
-      <p id="panel-sub">Find tasks that match your skills and start working</p>
+      <p id="panel-sub">Find tasks that match your skills and place your bid</p>
     </div>
 
-    <!-- STATS -->
     <div class="stats">
       <div class="stat-card"><div class="stat-label">Available Tasks</div><div class="stat-value gold" id="stat-available">0</div></div>
       <div class="stat-card"><div class="stat-label">My Active</div><div class="stat-value teal" id="stat-active">0</div></div>
       <div class="stat-card"><div class="stat-label">Completed</div><div class="stat-value green" id="stat-done">0</div></div>
-      <div class="stat-card"><div class="stat-label">Total Earned</div><div class="stat-value gold">—</div></div>
+      <div class="stat-card"><div class="stat-label">Bids Placed</div><div class="stat-value gold" id="stat-bids">0</div></div>
     </div>
 
     <!-- PANEL: OPEN TASKS -->
@@ -203,7 +230,7 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
           <span class="section-badge" id="mine-count">0 tasks</span>
         </div>
         <div class="my-tasks-list" id="my-tasks-list">
-          <div class="empty"><div class="icon">💼</div><p>You haven't accepted any tasks yet.</p></div>
+          <div class="empty"><div class="icon">💼</div><p>You haven't been assigned any tasks yet.</p></div>
         </div>
       </div>
     </div>
@@ -217,6 +244,9 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
   const freelancerId = user.id;
   if (!freelancerId) window.location.href = '/login.html';
   document.getElementById('nav-name').textContent = user.name || 'Freelancer';
+
+  // Track which tasks the freelancer already bid on
+  const biddedTasks = new Set();
 
   function showToast(msg, type='success') {
     const t = document.getElementById('toast');
@@ -232,7 +262,7 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
     document.getElementById('panel-' + tab).classList.add('active');
     if (tab === 'open') {
       document.getElementById('panel-title').textContent = 'Browse Open Tasks';
-      document.getElementById('panel-sub').textContent = 'Find tasks that match your skills and start working';
+      document.getElementById('panel-sub').textContent = 'Find tasks that match your skills and place your bid';
       loadOpenTasks();
     } else {
       document.getElementById('panel-title').textContent = 'My Tasks';
@@ -254,46 +284,133 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
   }
 
   function loadOpenTasks() {
-    fetch('/api/freelancer/tasks/open')
+    fetch('/api/tasks/all')
       .then(res => res.json())
       .then(tasks => {
-        document.getElementById('stat-available').textContent = tasks.length;
-        document.getElementById('open-count').textContent = tasks.length + ' available';
+        // Only show OPEN tasks
+        const openTasks = tasks.filter(t => t.status === 'OPEN');
+        document.getElementById('stat-available').textContent = openTasks.length;
+        document.getElementById('open-count').textContent = openTasks.length + ' available';
         const grid = document.getElementById('open-tasks-grid');
-        if (!tasks.length) {
+        if (!openTasks.length) {
           grid.innerHTML = '<div class="empty"><div class="icon">🎉</div><p>No open tasks right now. Check back soon!</p></div>';
           return;
         }
-        grid.innerHTML = tasks.map(task => `
-          <div class="task-card">
-            <div class="task-card-top">
-              <span class="task-card-title">${task.title}</span>
-              ${getPriorityBadge(task.piriority || task.priority)}
+        grid.innerHTML = openTasks.map(task => {
+          const alreadyBid = biddedTasks.has(task.id);
+          return `
+            <div class="task-card" id="task-card-${task.id}">
+              <div class="task-card-top">
+                <span class="task-card-title">${task.title}</span>
+                ${getPriorityBadge(task.piriority || task.priority)}
+              </div>
+              <div class="task-card-desc">${task.description || 'No description provided'}</div>
+
+              ${task.budget
+                ? `<div class="task-budget">💰 Client Budget: <span>$${task.budget}</span></div>`
+                : ''}
+
+              <div class="task-card-footer">
+                <div class="task-card-meta">${getStatusBadge(task.status)}</div>
+                ${alreadyBid
+                  ? `<span class="bid-sent">✓ Bid Placed</span>`
+                  : `<button class="btn-bid" onclick="toggleBidForm(${task.id})">Place Bid 💰</button>`
+                }
+              </div>
+
+              <!-- INLINE BID FORM -->
+              <div class="bid-form" id="bid-form-${task.id}">
+                <label>Your Bid Amount (USD)</label>
+                <div class="bid-input-row">
+                  <div class="bid-input-wrap">
+                    <span class="bid-currency">$</span>
+                    <input
+                      class="bid-input"
+                      type="number"
+                      id="bid-amount-${task.id}"
+                      placeholder="${task.budget ? 'Client budget: $' + task.budget : 'Enter amount'}"
+                      min="1"
+                    />
+                  </div>
+                  <button class="btn-bid-submit" onclick="submitBid(${task.id}, this)">Submit →</button>
+                  <button class="btn-cancel-bid" onclick="toggleBidForm(${task.id})">✕</button>
+                </div>
+              </div>
             </div>
-            <div class="task-card-desc">${task.description || 'No description provided'}</div>
-            <div class="task-card-footer">
-              <div class="task-card-meta">${getStatusBadge(task.status)}</div>
-              <button class="btn-accept" onclick="acceptTask(${task.id}, this)">Accept →</button>
-            </div>
-          </div>
-        `).join('');
+          `;
+        }).join('');
       })
       .catch(() => showToast('Failed to load tasks', 'error'));
   }
 
+  function toggleBidForm(taskId) {
+    const form = document.getElementById('bid-form-' + taskId);
+    form.classList.toggle('open');
+    if (form.classList.contains('open')) {
+      document.getElementById('bid-amount-' + taskId).focus();
+    }
+  }
+
+  function submitBid(taskId, btn) {
+    const amountInput = document.getElementById('bid-amount-' + taskId);
+    const amount = parseFloat(amountInput.value);
+
+    if (!amount || amount <= 0) {
+      showToast('Please enter a valid bid amount', 'error');
+      return;
+    }
+
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+
+    fetch('/api/bids/place', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ taskId, freelancerId, amount })
+    })
+    .then(res => {
+      if (res.ok) return res.json();
+      return res.text().then(t => { throw new Error(t); });
+    })
+    .then(() => {
+      biddedTasks.add(taskId);
+      showToast('Bid placed successfully! 🎉');
+      // Update the card footer to show "Bid Placed"
+      const card = document.getElementById('task-card-' + taskId);
+      const footer = card.querySelector('.task-card-footer');
+      footer.querySelector('.btn-bid').replaceWith(
+        Object.assign(document.createElement('span'), {
+          className: 'bid-sent',
+          textContent: '✓ Bid Placed'
+        })
+      );
+      // Hide the bid form
+      document.getElementById('bid-form-' + taskId).classList.remove('open');
+      // Update bids stat
+      document.getElementById('stat-bids').textContent =
+        parseInt(document.getElementById('stat-bids').textContent || 0) + 1;
+    })
+    .catch(err => {
+      showToast(err.message || 'Failed to place bid', 'error');
+      btn.textContent = 'Submit →';
+      btn.disabled = false;
+    });
+  }
+
   function loadMyTasks() {
-    fetch(`/api/freelancer/tasks/${freelancerId}`)
+    fetch(`/api/tasks/all`)
       .then(res => res.json())
       .then(tasks => {
-        document.getElementById('stat-active').textContent = tasks.filter(t => t.status === 'IN_PROGRESS').length;
-        document.getElementById('stat-done').textContent = tasks.filter(t => t.status === 'COMPLETED').length;
-        document.getElementById('mine-count').textContent = tasks.length + ' tasks';
+        const myTasks = tasks.filter(t => t.freelancer && t.freelancer.id === freelancerId);
+        document.getElementById('stat-active').textContent = myTasks.filter(t => t.status === 'IN_PROGRESS').length;
+        document.getElementById('stat-done').textContent = myTasks.filter(t => t.status === 'COMPLETED').length;
+        document.getElementById('mine-count').textContent = myTasks.length + ' tasks';
         const list = document.getElementById('my-tasks-list');
-        if (!tasks.length) {
-          list.innerHTML = '<div class="empty"><div class="icon">💼</div><p>You haven\'t accepted any tasks yet.</p></div>';
+        if (!myTasks.length) {
+          list.innerHTML = '<div class="empty"><div class="icon">💼</div><p>No tasks assigned yet. Place bids to get started!</p></div>';
           return;
         }
-        list.innerHTML = tasks.map(task => `
+        list.innerHTML = myTasks.map(task => `
           <div class="my-task-item">
             <div class="my-task-top">
               <span class="my-task-title">${task.title}</span>
@@ -312,24 +429,6 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
       .catch(() => showToast('Failed to load your tasks', 'error'));
   }
 
-  function acceptTask(taskId, btn) {
-    btn.textContent = 'Accepting...';
-    btn.disabled = true;
-    fetch(`/api/freelancer/tasks/${taskId}/accept?freelancerId=${freelancerId}`, { method: 'PUT' })
-      .then(res => res.json())
-      .then(data => {
-        if (data.id) {
-          showToast('Task accepted! Go to My Tasks to track it.');
-          loadOpenTasks();
-        } else {
-          showToast(data || 'Failed to accept task', 'error');
-          btn.textContent = 'Accept →';
-          btn.disabled = false;
-        }
-      })
-      .catch(() => { showToast('Network error', 'error'); btn.textContent = 'Accept →'; btn.disabled = false; });
-  }
-
   function completeTask(taskId, btn) {
     if (!confirm('Mark this task as completed?')) return;
     btn.textContent = 'Completing...';
@@ -338,7 +437,7 @@ main{flex:1;padding:2rem;max-width:1100px;width:100%;margin:0 auto;}
       .then(res => res.json())
       .then(data => {
         if (data.id) { showToast('Task marked as completed! 🎉'); loadMyTasks(); }
-        else { showToast(data || 'Failed to complete task', 'error'); btn.textContent = 'Mark Complete ✓'; btn.disabled = false; }
+        else { showToast('Failed to complete task', 'error'); btn.textContent = 'Mark Complete ✓'; btn.disabled = false; }
       })
       .catch(() => { showToast('Network error', 'error'); btn.textContent = 'Mark Complete ✓'; btn.disabled = false; });
   }
