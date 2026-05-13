@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="98c1f842-5a59-4815-98ec-2a85da226f66" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Free-lance-task-manager-/demo/src/main/java/com/example/demo/Model/PasswordResetToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Free-lance-task-manager-/demo/src/main/java/com/example/demo/Repository/PasswordResetTokenRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Free-lance-task-manager-/demo/src/main/java/com/example/demo/Service/PasswordResetService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Free-lance-task-manager-/demo/src/main/resources/static/forgot-password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Free-lance-task-manager-/demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Free-lance-task-manager-/demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Free-lance-task-manager-/demo/src/main/java/com/example/demo/Controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Free-lance-task-manager-/demo/src/main/java/com/example/demo/Controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Free-lance-task-manager-/demo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Free-lance-task-manager-/demo/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Free-lance-task-manager-/demo/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Free-lance-task-manager-/demo/src/main/resources/static/login.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Free-lance-task-manager-" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3DRURFS2pAydndjoyi4bTajIdrR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.freelancer.html.executor": "Run",
+    "JavaScript Debug.index.html.executor": "Run",
+    "JavaScript Debug.login.html.executor": "Run",
+    "JavaScript Debug.register.html.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/7odzz/Downloads/data of aast/projects-semster 4/Adv.programming project/freelance-project/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="freelance-project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="freelance-project" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="98c1f842-5a59-4815-98ec-2a85da226f66" name="Changes" comment="" />
+      <created>1778244371890</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1778244371890</updated>
+      <workItem from="1778244372927" duration="2706000" />
+      <workItem from="1778247160663" duration="1490000" />
+      <workItem from="1778706126793" duration="54000" />
+      <workItem from="1778706197170" duration="2493000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
