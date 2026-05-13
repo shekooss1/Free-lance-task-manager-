@@ -1,0 +1,21 @@
+{
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "app",
+            "username": "root",
+            "database": "SpringBootApp",
+            "connectionTimeout": 30
+        }
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
+}
