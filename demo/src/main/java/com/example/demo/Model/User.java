@@ -1,7 +1,11 @@
 package com.example.demo.Model;
 
+
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,23 +19,26 @@ import jakarta.persistence.Table;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long  id ;
+    private Long  id ;
     private String name ;
-    private String phone ;
+    private Long phone ;
     private String email ;
     private String password ;
     Role role ;
     Date joinedDate;
-@OneToMany(mappedBy = "client")
-private ArrayList<Task> clientTasks;    // tasks where this user is the CLIENT
 
+@JsonIgnore
+    @OneToMany(mappedBy = "client")
+private List<Task> clientTasks;    // tasks where this user is the CLIENT
+
+@JsonIgnore
 @OneToMany(mappedBy = "freelancer")
-private ArrayList<Task> freelancerTasks; // tasks where this user is the FREELANCER
+private List<Task> freelancerTasks; // tasks where this user is the FREELANCER
     
 public User() {
     }
 
-    public User(String email, long id, Date joinedDate, String name, String password, String phone, Role role) {
+    public User(String email, Long id, Date joinedDate, String name, String password, Long phone, Role role) {
         this.email = email;
         this.id = id;
         this.joinedDate = joinedDate;
@@ -41,11 +48,11 @@ public User() {
         this.role = role;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -57,11 +64,11 @@ public User() {
         this.name = name;
     }
 
-    public String getPhone() {
+    public Long getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(Long phone) {
         this.phone = phone;
     }
 
@@ -97,19 +104,19 @@ public User() {
         this.joinedDate = joinedDate;
     }
 
-    public ArrayList<Task> getClientTasks() {
+    public List<Task> getClientTasks() {
         return clientTasks;
     }
 
-    public void setClientTasks(ArrayList<Task> clientTasks) {
+    public void setClientTasks(List<Task> clientTasks) {
         this.clientTasks = clientTasks;
     }
 
-    public ArrayList<Task> getFreelancerTasks() {
+    public List<Task> getFreelancerTasks() {
         return freelancerTasks;
     }
 
-    public void setFreelancerTasks(ArrayList<Task> freelancerTasks) {
+    public void setFreelancerTasks(List<Task> freelancerTasks) {
         this.freelancerTasks = freelancerTasks;
     }
 

@@ -23,20 +23,15 @@ public class UserService {
 
         return userRepository.save(user);   
     }
-   
-    public User loginUser(String username, String password) {
+ public User loginUser(String email, String password) {
+    User user = userRepository.findByEmail(email)
+        .orElseThrow(() -> new RuntimeException("No user found with email: " + email));
 
-        
-        User user = userRepository.findByName(username)
-                .orElseThrow(() -> new RuntimeException("No user found with username: " + username));
-
-        if (!user.getPassword().equals(password)) {
-            throw new RuntimeException("Incorrect password.");
-        }
-
-        return user;  
+    if (!user.getPassword().equals(password)) {
+        throw new RuntimeException("Incorrect password.");
     }
-
+    return user;
+}
     
     public List<User> getAllUsers() {
         return userRepository.findAll();   

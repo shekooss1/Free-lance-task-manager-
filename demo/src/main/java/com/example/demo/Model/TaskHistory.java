@@ -6,6 +6,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 
@@ -18,9 +21,28 @@ public class TaskHistory {
     private String changeDescription ;
     Date timeStamp ; //when the change happend
 
+   @ManyToOne 
+   @JoinColumn(name="task_id")
+   private Task task;
+    
+   
+   @ManyToOne
+    @JoinColumn(name = "performed_by_id")
+    private User performedBy;
+   
+     private TaskStatus newStatus;  
+    private String note; 
+    public void setId(Long id) {
+    this.id = id;
+}
+   public Task getTask() {
+    return task;
+   }
+   public void setTask(Task task) {
+    this.task = task;
+   }
     public TaskHistory() {
     }
-
     public TaskHistory(String changeDescription, Long id, Date timeStamp) {
         this.changeDescription = changeDescription;
         this.id = id;
@@ -47,8 +69,17 @@ public class TaskHistory {
         return timeStamp;
     }
 
-    public void setTimeStamp(Date timeStamp) {
-        this.timeStamp = timeStamp;
+    public void setTimeStamp(java.util.Date timeStamp) {
+        this.timeStamp = (Date) timeStamp;
+    }
+     public User getPerformedBy() { return performedBy; }
+    public void setPerformedBy(User performedBy) { this.performedBy = performedBy; }
+
+    public void setNewStatus(TaskStatus newStatus) {
+    this.newStatus=newStatus;    
+    }
+    public void setNote(String note) {
+    this.note=note;      
     }
 
 
